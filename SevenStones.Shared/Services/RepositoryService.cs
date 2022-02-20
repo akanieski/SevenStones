@@ -129,6 +129,10 @@ namespace SevenStones.Services
                     .GetService<GitLeaksProcessor>()
                     .UpdateFacts(localWorkspace, repositoryBranch, actionUrl);
 
+                await _serviceProvider
+                    .GetService<BlacklistProcessor>()
+                    .UpdateFacts(localWorkspace, repositoryBranch, actionUrl);
+
                 await _dataContext.SaveChangesAsync();
             }
             finally

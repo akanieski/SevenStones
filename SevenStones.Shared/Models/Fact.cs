@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -15,13 +16,13 @@ namespace SevenStones.Models
         DotnetTargetFramework   = 2000,
         DotnetOutputType        = 2001,
         BigFile                 = 3000,
-        NodeModulesFound        = 3001,
-        PackagesFolderFound     = 3002,
-        BinDebugFound           = 3003
+        BlacklistedPath         = 3001
     }
+
     public class Fact
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
         public int RepositoryBranchId { get; set; }
         

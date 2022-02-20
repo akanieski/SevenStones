@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace SevenStones.Models
     public class Repository
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int SourceSystemId { get; set; }
         [MaxLength(1024)]
@@ -31,6 +33,7 @@ namespace SevenStones.Models
     public class RepositoryBranch
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int RepositoryId { get; set; }
         [MaxLength(1024)]

@@ -11,6 +11,7 @@ using AzureDevOpsEvents = SevenStones.Models.Microsoft;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
 using SevenStones.Models.Microsoft;
+using GlobExpressions;
 
 //string connectionString = Environment.GetEnvironmentVariable("SERVICEBUS_CONNECTION_STRING");
 string serviceBusConnectionString = "Endpoint=sb://ups-devsecops.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=x3jqNa+zenWrBceAOPJDUeDZHXJjY+0+6RjDQSwtigM=";
@@ -29,6 +30,7 @@ await using (var processor = client.CreateProcessor(queueName))
         .AddTransient<IRepositoryService, RepositoryService>()
         .AddTransient<DotNetVersionScanner>()
         .AddTransient<GitLeaksProcessor>()
+        .AddTransient<BlacklistProcessor>()
         .AddLogging(config => config.AddSimpleConsole())
         .BuildServiceProvider();
 
@@ -37,7 +39,7 @@ await using (var processor = client.CreateProcessor(queueName))
     logger.LogInformation($"Ensuring initial database schema is created..");
 
     var _dataContext = services.GetService<DataContext>(); 
-    _dataContext.Database.EnsureCreated();
+    await _dataContext.Initialize();
 
 
     logger.LogInformation($"Listening for work..");
