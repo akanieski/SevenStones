@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32210.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenStones.Worker", "SevenStones.Worker\SevenStones.Worker.csproj", "{87DF4AB4-57EB-452F-9FCE-26BCB887800E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenStones.Shared", "SevenStones.Shared\SevenStones.Shared.csproj", "{DAE16324-EF1A-49C3-A83C-A462498953FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1934BD6A-DA4D-4CE4-95CC-498D8A9841A1}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87DF4AB4-57EB-452F-9FCE-26BCB887800E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DF4AB4-57EB-452F-9FCE-26BCB887800E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DF4AB4-57EB-452F-9FCE-26BCB887800E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DF4AB4-57EB-452F-9FCE-26BCB887800E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE16324-EF1A-49C3-A83C-A462498953FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE16324-EF1A-49C3-A83C-A462498953FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE16324-EF1A-49C3-A83C-A462498953FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE16324-EF1A-49C3-A83C-A462498953FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {483C8251-B15E-474E-8FCB-C453904D964A}
+	EndGlobalSection
+EndGlobal
