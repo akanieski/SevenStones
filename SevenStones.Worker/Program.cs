@@ -13,9 +13,9 @@ using Microsoft.Extensions.Logging;
 using SevenStones.Models.Microsoft;
 using GlobExpressions;
 
-//string connectionString = Environment.GetEnvironmentVariable("SERVICEBUS_CONNECTION_STRING");
-string serviceBusConnectionString = "Endpoint=sb://ups-devsecops.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=x3jqNa+zenWrBceAOPJDUeDZHXJjY+0+6RjDQSwtigM=";
+string serviceBusConnectionString  = Environment.GetEnvironmentVariable("SERVICEBUS_CONNECTION_STRING");
 string queueName = Environment.GetEnvironmentVariable("SERVICEBUS_QUEUE_NAME") ?? "repo-commit-queue";
+
 IServiceProvider services = null;
 await using (var client = new ServiceBusClient(serviceBusConnectionString))
 await using (var processor = client.CreateProcessor(queueName))
